@@ -1,5 +1,6 @@
+var path = require('path');
 module.exports = {
-    entry: './src/main.js',
+    entry: ['webpack/hot/dev-server', path.resolve(__dirname, 'src/main.js')],
     output: {
         filename: './dist/bundle.js'
     },
@@ -8,8 +9,8 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: 'babel'
+                loaders: ['react-hot-loader/webpack', 'babel']
             }
         ]
-    },devtool: 'source-map'
+    }, devtool: 'source-map'
 };
