@@ -9,7 +9,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loaders: ['react-hot-loader/webpack', 'babel']
+                loaders: ['react-hot', 'babel']
             }
         ]
     }, devtool: 'source-map'

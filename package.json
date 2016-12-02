@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot",
-    "build": "webpack"
+    "build": "webpack",
+    "start": "npm run dev"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
+    "react-hot-loader": "^1.3.1",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   }
