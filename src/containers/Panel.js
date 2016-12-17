@@ -19,7 +19,10 @@ class Panel extends React.Component {
         return (
             <div>
                 <Show num={number} />
-                <Btn increment={actions.incrementAction} />
+                <Btn 
+                    increment={actions.incrementAction} 
+                    decrement={actions.decrementAction}
+                />
             </div>
         )
     }
