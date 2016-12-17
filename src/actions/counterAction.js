@@ -1,5 +1,6 @@
 export const incrementAction = () => {
     return {
-        type: 'INCREMENT'
+        type: 'INCREMENT',
+        number: 1
     }
 }
