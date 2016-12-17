@@ -1,5 +1,8 @@
 import React from 'react';
 
+import Show from '../components/Show';
+import Btn from '../components/Btn';
+
 class Panel extends React.Component {
     constructor() {
         super();
