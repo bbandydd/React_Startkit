@@ -10,27 +10,16 @@ import * as counterAction from '../actions/counterAction';
 class Panel extends React.Component {
     constructor() {
         super();
-        this.state = {
-            number: 0
-        }
-    }
-
-    increment = () => {
-        let newState = {
-            number: this.state.number + 1
-        }
-
-        this.setState(newState);
     }
 
     render() {
 
-        const { counterReducer, counterAction } = this.props;
+        const { number, actions } = this.props;
 
         return (
             <div>
-            <Show num={this.state.number} />
-            <Btn increment={this.increment} />
+                <Show num={number} />
+                <Btn increment={actions.incrementAction} />
             </div>
         )
     }
@@ -38,13 +27,13 @@ class Panel extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        counterReducer: state.counterReducer
+        number: state.counterReducer
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        counterAction: bindActionCreators(counterAction, dispatch)
+        actions: bindActionCreators(counterAction, dispatch)
     }
 }
 
