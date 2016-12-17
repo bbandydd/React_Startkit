@@ -1,7 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import Show from '../components/Show';
 import Btn from '../components/Btn';
+
+import * as counterAction from '../actions/counterAction';
 
 class Panel extends React.Component {
     constructor() {
@@ -20,13 +24,28 @@ class Panel extends React.Component {
     }
 
     render() {
-      return (
-        <div>
-          <Show num={this.state.number} />
-          <Btn increment={this.increment} />
-        </div>
-      )
+
+        const { counterReducer, counterAction } = this.props;
+
+        return (
+            <div>
+            <Show num={this.state.number} />
+            <Btn increment={this.increment} />
+            </div>
+        )
     }
 }
 
-export default Panel;
+const mapStateToProps = (state) => {
+    return {
+        counterReducer: state.counterReducer
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        counterAction: bindActionCreators(counterAction, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Panel);
