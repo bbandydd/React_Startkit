@@ -6,4 +6,4 @@ const rootReducer = combineReducers({
     counterReducer
 })
 
-export default createStore(rootReducer);
+export default createStore(rootReducer, window.devToolsExtension ? window.devToolsExtension() : undefined);
