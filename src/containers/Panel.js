@@ -30,7 +30,7 @@ class Panel extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        number: state.counterReducer
+        number: state.counterReducer.number
     }
 }
 
